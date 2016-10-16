@@ -21,10 +21,10 @@ const blogSchema = new mongoose.Schema({
   toJSON: { virtuals: true },
 });
 
-blogSchema.virtual('length').get(function length() {
-  return this.text.length;
-});
+// blogSchema.virtual('length').get(function length() {
+//   return this.text.length;
+// });
 
-const Blog = mongoose.model('Example', blogSchema);
+const Blog = mongoose.model('Blog', blogSchema);
 
 module.exports = Blog;
