@@ -6,8 +6,10 @@ curl --include --request POST http://localhost:3000/blogs \
   --data '{
     "blog": {
       "name": "I am a blog",
-      "post": "[title: 'this is the post title', content: 'content words stuff things']",
-      "_owner": "req.currentUser._id"
+      "posts": {
+        "title": "this is the post title",
+        "content": "content words stuff things"
+      }
     }
   }'
 

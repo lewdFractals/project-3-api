@@ -13,12 +13,21 @@ const blogSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  // post: [post],
   _owner: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
     required: true,
   },
+  posts: [
+    {title: {
+        type: String,
+        required: true,
+      },
+      content: {
+        type: String,
+        required: true
+      },
+  }]
 }, {
   timestamps: true,
   toJSON: { virtuals: true },
