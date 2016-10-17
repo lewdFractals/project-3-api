@@ -1,6 +1,7 @@
 'use strict';
 
 const mongoose = require('mongoose');
+const uniqueValidator = require('mongoose-unique-validator');
 
 const pageSchema = new mongoose.Schema({
   header: {
@@ -28,6 +29,8 @@ const pageSchema = new mongoose.Schema({
   timestamps: true,
   toJSON: { virtuals: true },
 });
+
+pageSchema.plugin(uniqueValidator);
 
 // pageSchema.virtual('length').get(function length() {
 //   return this.text.length;

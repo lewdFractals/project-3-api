@@ -7,10 +7,12 @@ const Page = models.page;
 const authenticate = require('./concerns/authenticate');
 
 const index = (req, res, next) => {
+  // let owner = { _owner: req.currentUser };
   Page.find()
     .then(pages => res.json({ pages }))
     .catch(err => next(err));
 };
+
 
 const show = (req, res, next) => {
   Page.findById(req.params.id)
@@ -62,6 +64,7 @@ module.exports = controller({
   create,
   update,
   destroy,
-}, { before: [
+},
+{ before: [
   { method: authenticate, except: ['index', 'show'] },
 ], });

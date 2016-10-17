@@ -2,15 +2,18 @@
 
 const mongoose = require('mongoose');
 
+// const post = new mongoose.Schema({
+//   title: String,
+//   content: String,
+//   required: true,
+// });
+
 const blogSchema = new mongoose.Schema({
-  content: {
+  name: {
     type: String,
     required: true,
   },
-  title: {
-    type: String,
-    required: true,
-  },
+  // post: [post],
   _owner: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
