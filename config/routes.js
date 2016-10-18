@@ -18,7 +18,8 @@ module.exports = require('lib/wiring/routes')
 .resources('users', { only: ['index', 'show'] })
 .resources('blogs')
 .get('/myblogs', 'blogs#indexUser')
-.resources('pages', { only: ['index', 'show', 'create', 'update', 'destroy'] })
+// .resources('pages', { only: ['index', 'show', 'create', 'update', 'destroy'] })
+.resources('pages')
 
 // all routes created
 ;
