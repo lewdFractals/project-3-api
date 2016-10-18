@@ -7,7 +7,8 @@ const Page = models.page;
 const authenticate = require('./concerns/authenticate');
 
 const index = (req, res, next) => {
-  Page.find()
+  let owner = { _owner: req.currentUser._id };
+  Page.find(owner)
     .then(pages => res.json({ pages }))
     .catch(err => next(err));
 };
@@ -63,5 +64,5 @@ module.exports = controller({
   update,
   destroy,
 }, { before: [
-  { method: authenticate, except: ['index', 'show'] },
+  { method: authenticate, except: [] },
 ], });

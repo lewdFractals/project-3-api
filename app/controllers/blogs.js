@@ -6,6 +6,13 @@ const Blog = models.blog;
 
 const authenticate = require('./concerns/authenticate');
 
+const indexUser = (req, res, next) => {
+    let owner = { _owner: req.currentUser._id };
+    Blog.find(owner)
+      .then(blogs => res.json({ blogs }))
+      .catch(err => next(err));
+};
+
 const index = (req, res, next) => {
   Blog.find()
     .then(blogs => res.json({ blogs }))
@@ -58,10 +65,11 @@ const destroy = (req, res, next) => {
 
 module.exports = controller({
   index,
+  indexUser,
   show,
   create,
   update,
   destroy,
 }, { before: [
-  { method: authenticate, except: ['index', 'show'] },
+  { method: authenticate, except: ['index'] },
 ], });
