@@ -1,12 +1,13 @@
 #!/bin/bash
 
 curl --include --request POST http://localhost:3000/blogs \
-  --header "Authorization: Token token=tGM4GXcZFSHbLM2xMp+4Wc0FYtk8RlguQ4KjLHpCO14=--xr57zI53EAOIXZ4kMCqs3DKwKQxq4qed22Xic0ufngA=" \
+  --header "Authorization: Token token=rgPKrLLvn/vPv+thaYJfnwtArKhkXpVTXplkeiwo9z4=--hIYGk6rc9t2NZ4JTF8ruZlX5CeMN76LmKRT1x8m5BhY=" \
   --header "Content-Type: application/json" \
   --data '{
     "blog": {
       "content": "more really useless words",
-      "title": "FUCK You",
+      "title": "You are nice",
+      "author": "Lauren",
       "_owner": "req.currentUser._id"
     }
   }'
