@@ -10,7 +10,7 @@ const cors = require('cors');
 const loader = require('lib/wiring/loader');
 
 const corsOptions = {
-  origin: process.env.CLIENT_ORIGIN || 'http://localhost:7165',
+  origin: process.env.CLIENT_ORIGIN || 'https://lewdfractals.github.io',
 };
 
 const before = (app) => {
