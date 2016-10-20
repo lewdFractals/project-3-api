@@ -6,7 +6,7 @@ const controller = require('lib/wiring/controller');
 const root = (req, res) => {
   res.json({
     index: {
-      title: 'project-three',
+      title: 'project-3-api',
       environment: req.app.get('env'),
     },
   });

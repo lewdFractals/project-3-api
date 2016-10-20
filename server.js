@@ -23,7 +23,7 @@ app.use(middleware['404']);
 // error handlers
 app.use(middleware['error-handler']);
 
-const debug = require('debug')('project-three:server');
+const debug = require('debug')('project-3-api:server');
 const http = require('http');
 
 /**
